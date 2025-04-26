@@ -13,9 +13,6 @@ jobs:
         runs-on: self-hosted
         steps:
             - uses: actions/checkout@v4
-            - uses: actions/setup-dotnet@v4
-              with:
-                dotnet-version: '9.0.100'
             - name: restore
               run: dotnet restore src/Presentation/Nop.Web/Nop.Web.csproj
             - name: build
