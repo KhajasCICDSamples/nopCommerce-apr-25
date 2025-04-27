@@ -20,7 +20,7 @@ jobs:
             - name: restore
               run: dotnet restore src/Presentation/Nop.Web/Nop.Web.csproj
             - name: build
-              run: dotnet build  src/Presentation/Nop.Web/Nop.Web.csproj --configuration Debug
+              run: dotnet build  src/Presentation/Nop.Web/Nop.Web.csproj -c Release /p:NoBuild=false /verbosity:normal
             - name: Initialize CodeQL
               uses: github/codeql-action/init@v3
               with:
