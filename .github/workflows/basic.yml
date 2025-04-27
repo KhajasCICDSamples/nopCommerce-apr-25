@@ -17,3 +17,10 @@ jobs:
               run: dotnet restore src/Presentation/Nop.Web/Nop.Web.csproj
             - name: build
               run: dotnet build  src/Presentation/Nop.Web/Nop.Web.csproj --configuration Debug
+            - name: Initialize CodeQL
+              uses: github/codeql-action/init@v3
+              with:
+                languages: csharp
+        
+            - name: Perform CodeQL Analysis
+              uses: github/codeql-action/analyze@v3
